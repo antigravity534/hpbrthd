@@ -3,28 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <title>Список дней рождения</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; max-width: 800px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
 </head>
 <body>
-    <h1>Дни рождения</h1>
+    <h1>Дни рождения участников</h1>
     <table id="birthday-table">
         <thead>
             <tr>
-                <th>Имя</th>
+                <th>ФИО участника</th>
                 <th>Дата рождения</th>
+                <th>Телеграм</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Иван Иванов</td>
-                <td>03.07</td>
+                <td>Мартишин Георгий Антонович</td>
+                <td>25.02.2006</td>
+                <td>@georgiy12</td>
             </tr>
             <tr>
-                <td>Мария Петрова</td>
-                <td>04.07</td>
+                <td>Стуров Никита Евгеньевич</td>
+                <td>09.08.2006</td>
+                <td>@nikst7</td>
             </tr>
             <tr>
-                <td>Алексей Сидоров</td>
-                <td>01.01</td>
+                <td>Пуцман Пётр Владимирович</td>
+                <td>09.09.2009</td>
+                <td>@PetPutin</td>
+            </tr>
+            <tr>
+                <td>Полухин Сергей Владимирович</td>
+                <td>14.01.2008</td>
+                <td>@Run_chess_grutt</td>
+            </tr>
+            <tr>
+                <td>Гончар София Константиновна</td>
+                <td>15.08.2007</td>
+                <td>@SofiyaGonchar</td>
+            </tr>
+            <tr>
+                <td>Лутфрахманов Рафаэль Ринатович</td>
+                <td>17.06.2008</td>
+                <td>@Rafaell_L</td>
+            </tr>
+            <tr>
+                <td>Брянский Иван Андреевич</td>
+                <td>27.06.2009</td>
+                <td>@ivanbranski01</td>
+            </tr>
+            <tr>
+                <td>Буторина Оливия Александровна</td>
+                <td>13.05.2007</td>
+                <td>@Olover0</td>
+            </tr>
+            <tr>
+                <td>Маланин Матвей Олегович</td>
+                <td>09.04.2009</td>
+                <td>@obezyankin</td>
+            </tr>
+            <tr>
+                <td>Ишмуратов Тимур Ильдарович</td>
+                <td>19.09.2007</td>
+                <td>@dailytimm</td>
+            </tr>
+            <tr>
+                <td>Хомякова Карина Артемовна</td>
+                <td>30.03.2010</td>
+                <td>@vxlsw</td>
+            </tr>
+            <tr>
+                <td>Закиров Тимур Айратович</td>
+                <td>07.05.2005</td>
+                <td>@timir_za</td>
+            </tr>
+            <tr>
+                <td>Евтухова Елизавета Дмитриевна</td>
+                <td>11.03.2009</td>
+                <td>@wettsaa</td>
+            </tr>
+            <tr>
+                <td>Чикунов Кирилл Константинович</td>
+                <td>25.01.2008</td>
+                <td>@wtfgloryy</td>
+            </tr>
+            <tr>
+                <td>Брагин Валерий Витальевич</td>
+                <td>03.07.2009</td>
+                <td>@usdtkiss</td>
+            </tr>
+            <tr>
+                <td>Яицкая Мария Васильевна</td>
+                <td>16.11.2008</td>
+                <td>@Marya_Yaitckaya</td>
+            </tr>
+            <tr>
+                <td>Ермолаев Эрик Владиславович</td>
+                <td>03.07.2008</td>
+                <td>@integriruu_v_ume</td>
+            </tr>
+            <tr>
+                <td>Пастушкова Лидия Александровна</td>
+                <td>23.01.2009</td>
+                <td>@shepherd_Lidia</td>
+            </tr>
+            <tr>
+                <td>Беляева Елизавета Олеговна</td>
+                <td>16.06.2009</td>
+                <td>@lisabelyaeva1</td>
+            </tr>
+            <tr>
+                <td>Байбакова Софья Юрьевна</td>
+                <td>15.09.2009</td>
+                <td>@Simka_14</td>
+            </tr>
+            <tr>
+                <td>Лаврентьев Егор Романович</td>
+                <td>12.09.2008</td>
+                <td>@turtles63</td>
+            </tr>
+            <tr>
+                <td>Кузьмин Николай Станиславович</td>
+                <td>10.12.2009</td>
+                <td>@N1kolayKuzmin</td>
+            </tr>
+            <tr>
+                <td>Рыжиков Иван Алексеевич</td>
+                <td>25.06.2006</td>
+                <td>@nsbrd</td>
+            </tr>
+            <tr>
+                <td>Троян Мария Максимовна</td>
+                <td>24.05.2007</td>
+                <td>@tromariii</td>
+            </tr>
+            <tr>
+                <td>Матчина София Александровна</td>
+                <td>11.10.2007</td>
+                <td>@matchinasofia</td>
+            </tr>
+            <tr>
+                <td>Тимошенко Александра Олеговна</td>
+                <td>09.01.2010</td>
+                <td>@sa8v5ra</td>
+            </tr>
+            <tr>
+                <td>Прокофьева Вероника Михайловна</td>
+                <td>10.11.2008</td>
+                <td>@blueberry_nika_0_0</td>
+            </tr>
+            <tr>
+                <td>Галеева Карина Ренатовна</td>
+                <td>10.06.2007</td>
+                <td>@krinnaaaa</td>
+            </tr>
+            <tr>
+                <td>Суркова Мария Евгеньевна</td>
+                <td>27.06.2009</td>
+                <td>@mariaww09</td>
+            </tr>
+            <tr>
+                <td>Морозов Александр Иванович</td>
+                <td>23.08.2008</td>
+                <td>@alexn22</td>
+            </tr>
+            <tr>
+                <td>Борисова Владислава Борисовна</td>
+                <td>07.09.2007</td>
+                <td>@vdohnoviy</td>
+            </tr>
+            <tr>
+                <td>Лисенков Ярослав Александрович</td>
+                <td>05.07.2009</td>
+                <td>@YarosLis</td>
             </tr>
         </tbody>
     </table>
