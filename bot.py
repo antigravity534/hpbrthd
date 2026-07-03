@@ -7,7 +7,7 @@ def check_birthdays():
     # Настройка часового пояса Москвы (UTC+3)
     msk_tz = timezone(timedelta(hours=3))
     today_msk = datetime.now(msk_tz)
-    today_str = today_msk.strftime("%d.%m")  # Формат 'ДД.ММ'
+    today_str = today_msk.strftime("%d.%m")  # Получаем 'ДД.ММ' (например, '25.02')
 
     # Чтение HTML-файла
     try:
@@ -26,15 +26,25 @@ def check_birthdays():
 
     celebrants = []
     
-    # Обход строк таблицы (пропуская заголовок)
-    rows = table.find_all("tr")[1:]
+    rows = table.find_all("tr")[1:]  # Пропускаем заголовок таблицы
     for row in rows:
         cols = row.find_all("td")
         if len(cols) >= 2:
             name = cols[0].text.strip()
-            birthday = cols[1].text.strip()
-            if birthday == today_str:
-                celebrants.append(name)
+            full_birthday = cols[1].text.strip()  # Читает 'ДД.ММ.ГГГГ'
+            
+            # Извлекаем только день и месяц (первые две части даты через точку)
+            birthday_parts = full_birthday.split(".")
+            if len(birthday_parts) >= 2:
+                birthday_dm = f"{birthday_parts[0]}.{birthday_parts[1]}"  # Получаем 'ДД.ММ'
+                
+                if birthday_dm == today_str:
+                    # Если есть третья колонка с телеграмом, берем его
+                    telegram = cols[2].text.strip() if len(cols) >= 3 else ""
+                    if telegram and telegram != "-":
+                        celebrants.append(f"{name} ({telegram})")
+                    else:
+                        celebrants.append(name)
 
     # Если есть именинники, отправляем сообщение
     if celebrants:
@@ -46,7 +56,7 @@ def check_birthdays():
             return
 
         names_str = ", ".join(celebrants)
-        message = f"Сегодня день рождения празднует: {names_str}! Поздравляем! 🎉"
+        message = f"Сегодня день рождения празднует:\n{names_str}! Поздравляем! 🎉"
 
         url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
         payload = {"chat_id": chat_id, "text": message}
