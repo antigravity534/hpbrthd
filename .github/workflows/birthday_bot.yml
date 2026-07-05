@@ -2,9 +2,13 @@ name: Daily Birthday Checker
 
 on:
   schedule:
-    # Запуск каждый день в 6:00 UTC (9:00 МСК)
-    - cron: '0 6 * * *'
-  workflow_dispatch: # Позволяет запускать скрипт вручную для тестов
+    - cron: '0 6 * * *'  # 09:00 МСК
+  workflow_dispatch:
+  push:  # Добавьте это для тестирования
+    branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   check:
